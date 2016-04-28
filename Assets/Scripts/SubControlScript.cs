@@ -19,22 +19,22 @@ public class SubControlScript : MonoBehaviour
 
 		if (Input.GetKey ("w")) 
 		{
-			currentX = MoveSpeed;
+			currentY = MoveSpeed;
 		}
 
 		if (Input.GetKey ("s")) 
 		{
-			currentX = -MoveSpeed;
+			currentY = -MoveSpeed;
 		}
 
 		if (Input.GetKey ("a")) 
 		{
-			currentY = -MoveSpeed;
+			currentX = -MoveSpeed;
 		}
 
 		if (Input.GetKey ("d")) 
 		{
-			currentY = MoveSpeed;
+			currentX = MoveSpeed;
 		}
 
 		SubRigidbody.velocity = new Vector2 (currentX,currentY);
