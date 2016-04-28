@@ -14,25 +14,27 @@ public class ParallaxBackround : MonoBehaviour {
     {
         //GetComponent<Renderer>().material.mainTextureOffset = offset;
 
+		float offsetX = 0;
+		float offsetY = 0;
+
         if (Input.GetKey(KeyCode.A))
         {
-            Vector2 offset = new Vector2(Time.time * -speed, 0);
-            GetComponent<Renderer>().material.mainTextureOffset = offset;
+			offsetX = Time.time * -speed;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            Vector2 offset = new Vector2(Time.time * speed, 0);
-            GetComponent<Renderer>().material.mainTextureOffset = offset;
+			offsetX = Time.time * speed;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            Vector2 offset = new Vector2(0, Time.time * -speed);
-            GetComponent<Renderer>().material.mainTextureOffset = offset;
+            offsetY = Time.time * -speed;
         }
         if (Input.GetKey(KeyCode.W))
         {
-            Vector2 offset = new Vector2(0, Time.time * speed);
-            GetComponent<Renderer>().material.mainTextureOffset = offset;
+			offsetY = Time.time * speed;
         }
+
+		Vector2 offset = new Vector2(offsetX,offsetY);
+		GetComponent<Renderer>().material.mainTextureOffset = offset;
     }
 }

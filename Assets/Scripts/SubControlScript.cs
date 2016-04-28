@@ -14,24 +14,29 @@ public class SubControlScript : MonoBehaviour
 
 	void Update () 
 	{	
+		float currentX = SubRigidbody.velocity.x;
+		float currentY = SubRigidbody.velocity.y;
+
 		if (Input.GetKey ("w")) 
 		{
-			SubRigidbody.velocity = new Vector2 (SubRigidbody.velocity.x, MoveSpeed);
+			currentX = MoveSpeed;
 		}
 
 		if (Input.GetKey ("s")) 
 		{
-			SubRigidbody.velocity = new Vector2 (SubRigidbody.velocity.x, -MoveSpeed);
+			currentX = -MoveSpeed;
 		}
 
 		if (Input.GetKey ("a")) 
 		{
-			SubRigidbody.velocity = new Vector2 (-MoveSpeed,SubRigidbody.velocity.y );
+			currentY = -MoveSpeed;
 		}
 
 		if (Input.GetKey ("d")) 
 		{
-			SubRigidbody.velocity = new Vector2 (MoveSpeed,SubRigidbody.velocity.y );
+			currentY = MoveSpeed;
 		}
+
+		SubRigidbody.velocity = new Vector2 (currentX,currentY);
 	}
 }
