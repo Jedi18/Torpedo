@@ -18,7 +18,7 @@ public class PlayerInfo : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		score += Time.deltaTime;
-		scoreText.text = "Score - " + score;
+		scoreText.text = "Score - " + Mathf.Round(score);
 	}
 
 	void reduceHealth(){
