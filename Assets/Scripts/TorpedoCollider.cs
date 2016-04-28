@@ -10,7 +10,7 @@ public class TorpedoCollider : MonoBehaviour {
 		{
 			GameObject.Find("Main Camera").SendMessage("ShakeCamera");
 			GameObject.FindWithTag("Player").SendMessage("reduceHealth");
-			Destroy(gameObject);
+			gameObject.SetActive(false);
 		}
 
 	}
