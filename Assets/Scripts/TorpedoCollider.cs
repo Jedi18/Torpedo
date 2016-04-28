@@ -35,16 +35,18 @@ public class TorpedoCollider : MonoBehaviour
     {
         if (isShaking == true)
         {
-            ShakeCamera(0.1f, 0.05f);
+            ShakeCamera(0.5f, 0.1f);
         }
         if (shakeTimer > 0)
         {
 
             Vector2 ShakePos = Random.insideUnitCircle * shakeAmount;
 
-           theCamera.transform.position = new Vector2(transform.position.x + ShakePos.x, transform.position.y + ShakePos.y);
+           theCamera.transform.position = new Vector2(theCamera.transform.position.x + ShakePos.x, theCamera.transform.position.y + ShakePos.y);
 
             shakeTimer -= Time.deltaTime;
+
+			Destroy(gameObject);
         }
     }
 
