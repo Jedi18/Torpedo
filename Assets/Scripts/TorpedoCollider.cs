@@ -8,14 +8,14 @@ public class TorpedoCollider : MonoBehaviour
     public float shakeAmount;
     //float shakeDur = 0.1f;
     //float shakePwr = 1;
-    public bool isShaking;
+    public bool isShaking = false;
 	public GameObject theCamera;
 
     void Start()
     {
         isShaking = false;
-        ShakeCamera(0.0f, 0.0f);
-		//theCamera = GameObject.Find ("Main Camera");
+        //ShakeCamera(shakeTimer, shakeAmount);
+        //theCamera = GameObject.Find ("Main Camera");
     }
 
     public void OnTriggerEnter2D(Collider2D col)
@@ -35,7 +35,7 @@ public class TorpedoCollider : MonoBehaviour
     {
         if (isShaking == true)
         {
-            ShakeCamera(0.5f, 0.1f);
+            ShakeCamera(shakeTimer, shakeAmount);
         }
         if (shakeTimer > 0)
         {
@@ -46,7 +46,7 @@ public class TorpedoCollider : MonoBehaviour
 
             shakeTimer -= Time.deltaTime;
 
-			Destroy(gameObject);
+			//Destroy(gameObject);
         }
     }
 
