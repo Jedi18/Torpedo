@@ -1,25 +1,28 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerInfo : MonoBehaviour {
 
-	public int health;
-	public float score;
+	public int health = 3;
+	public float score = 0;
+	public Text scoreText;
+	public Text healthText;
 
 	// Use this for initialization
 	void Start () {
-		health = 3;
-		score = 0;
+		scoreText.text = "Score - " + score;
+		healthText.text = "Lives - " + health;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		score += Time.deltaTime;
+		scoreText.text = "Score - " + score;
 	}
 
 	void reduceHealth(){
 		health--;
-		Debug.Log ("Health - "+ health);
-		Debug.Log("Score - "+ score);
+		healthText.text = "Lives - " + health;
 	}
 }
