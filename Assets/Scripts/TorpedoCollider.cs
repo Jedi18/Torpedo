@@ -9,6 +9,7 @@ public class TorpedoCollider : MonoBehaviour {
 		if (col.gameObject.tag == "Player")
 		{
 			GameObject.Find("Main Camera").SendMessage("ShakeCamera");
+			Destroy(gameObject);
 		}
 
 	}

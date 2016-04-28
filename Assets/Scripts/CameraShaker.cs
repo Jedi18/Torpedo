@@ -16,26 +16,32 @@ public class CameraShaker : MonoBehaviour {
 	
 	public void Update()
 	{
+		Vector3 originalPos = transform.position;
+
 		if (isShaking == true)
 		{
 			shakeTimer = shakeTimerA;
 		}
 		if (shakeTimer > 0)
 		{
+
+			Vector3 ShakePos = Random.insideUnitCircle * shakeAmount;
 			
-			Vector2 ShakePos = Random.insideUnitCircle * shakeAmount;
-			
-			transform.position = new Vector2(transform.position.x + ShakePos.x, transform.position.y + ShakePos.y);
+			transform.position = new Vector3(transform.position.x + ShakePos.x, transform.position.y + ShakePos.y,transform.position.z);
 			
 			shakeTimer -= Time.deltaTime;
-			
-			//Destroy(gameObject);
+
+			isShaking = false;
+
+		}
+
+		if(shakeTimer == 0){
+			transform.position = originalPos;
 		}
 	}
 
 	public void ShakeCamera(){
 
-		Debug.Log ("Shake the camera!");
 		isShaking = true;
 
 	}
