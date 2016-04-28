@@ -4,8 +4,7 @@ using System.Collections;
 public class SubControlScript : MonoBehaviour 
 {
 	public Rigidbody2D SubRigidbody;
-	public float MoveSpeed = 5f;
-
+	float MoveSpeed = 5f;
 
 	void Start ()
 	{
@@ -39,13 +38,5 @@ public class SubControlScript : MonoBehaviour
 		}
 
 		SubRigidbody.velocity = new Vector2 (currentX,currentY);
-
-	
-
 	}
-
-	void FixedUpdate()
-	{
-		
-		}
-	}
+}
