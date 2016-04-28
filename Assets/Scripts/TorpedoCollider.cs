@@ -9,16 +9,19 @@ public class TorpedoCollider : MonoBehaviour
     //float shakeDur = 0.1f;
     //float shakePwr = 1;
     public bool isShaking;
+	GameObject theCamera;
 
     void Start()
     {
         isShaking = false;
         ShakeCamera(0.0f, 0.0f);
+		theCamera = GameObject.Find ("Main Camera");
     }
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Enemy")
+
+        if (col.gameObject.tag == "Player")
         {
             isShaking = true;
         }
@@ -34,11 +37,12 @@ public class TorpedoCollider : MonoBehaviour
         {
             ShakeCamera(0.1f, 0.05f);
         }
-        if (shakeTimer >= 0)
+        if (shakeTimer > 0)
         {
+
             Vector2 ShakePos = Random.insideUnitCircle * shakeAmount;
 
-            transform.position = new Vector3(transform.position.x + ShakePos.x, transform.position.y + ShakePos.y, transform.position.z);
+            theCamera.transform.Translate(new Vector3(theCamera.transform.position.x + ShakePos.x, theCamera.transform.position.y + ShakePos.y, theCamera.transform.position.z));
 
             shakeTimer -= Time.deltaTime;
         }

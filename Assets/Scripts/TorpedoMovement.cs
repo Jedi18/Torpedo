@@ -9,7 +9,7 @@ public class TorpedoMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.Find ("Submarine-temp");
+		player = GameObject.FindWithTag("Player");
 	}
 	
 	// Update is called once per frame
