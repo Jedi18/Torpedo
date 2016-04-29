@@ -1,17 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TorpedoCollider : MonoBehaviour {
+public class TorpedoCollider : MonoBehaviour
+{
+
+    private ShakeBehaviour _cameraShakeBehaviour;
+    private PlayerInfo _playerInfo;
+
+    void Awake()
+    {
+        _cameraShakeBehaviour = Camera.main.GetComponent<ShakeBehaviour>();
+        _playerInfo = GameObject.FindWithTag("Player").GetComponent<PlayerInfo>();
+    }
+
 
 	public void OnTriggerEnter2D(Collider2D col)
 	{
-		
-		if (col.gameObject.tag == "Player")
+		if (col.CompareTag("Player"))
 		{
-			GameObject.Find("Main Camera").SendMessage("ShakeCamera");
-			GameObject.FindWithTag("Player").SendMessage("reduceHealth");
+            _cameraShakeBehaviour.StartShaking();
+			_playerInfo.reduceHealth();
 			gameObject.SetActive(false);
 		}
-
 	}
 }

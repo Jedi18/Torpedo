@@ -25,7 +25,7 @@ public class PlayerInfo : MonoBehaviour {
 		}
 	}
 
-	void reduceHealth(){
+	public void reduceHealth(){
 		health--;
 		healthText.text = "Lives - " + health;
 
