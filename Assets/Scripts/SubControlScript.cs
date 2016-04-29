@@ -5,7 +5,7 @@ public class SubControlScript : MonoBehaviour
 {
 	public Rigidbody2D SubRigidbody;
 	public float MoveSpeed = 5f;
-
+	public float angleToRot = 40;
 
 	void Start ()
 	{
@@ -15,37 +15,31 @@ public class SubControlScript : MonoBehaviour
 
 	void Update () 
 	{	
-		float currentX = SubRigidbody.velocity.x;
-		float currentY = SubRigidbody.velocity.y;
 
 		if (Input.GetKey ("w")) 
 		{
-			currentY = MoveSpeed;
+			SubRigidbody.velocity += (Vector2)transform.TransformDirection(Vector3.up) * MoveSpeed;
 		}
 
 		if (Input.GetKey ("s")) 
 		{
-			currentY = -MoveSpeed;
+			SubRigidbody.velocity -= (Vector2)transform.TransformDirection(Vector3.up) * MoveSpeed;
 		}
 
 		if (Input.GetKey ("a")) 
 		{
-			currentX = -MoveSpeed;
+			SubRigidbody.MoveRotation(angleToRot);
 		}
 
 		if (Input.GetKey ("d")) 
 		{
-			currentX = MoveSpeed;
+			SubRigidbody.MoveRotation(-angleToRot);;
 		}
-
-		SubRigidbody.velocity = new Vector2 (currentX,currentY);
-
-	
 
 	}
 
 	void FixedUpdate()
 	{
-		
-		}
+
 	}
+}

@@ -10,14 +10,24 @@ public class CameraShaker : MonoBehaviour {
 
     private Vector3 initialPosition;
     private float shakeTimer;
+	GameObject submarine;
+	public Transform submarineTransform;
+	Vector3 submarinePos;
 
     void Start()
 	{
 		isShaking = false;
+		submarine = GameObject.FindWithTag("Player");
+		submarineTransform = submarine.GetComponent<Transform> ();
 	}
 	
 	public void Update()
 	{
+		submarinePos = submarineTransform.position;
+		submarinePos.z = -10;
+		//camera movement
+		transform.position = submarinePos;
+
 	    if (!isShaking)
 	        return;
 
