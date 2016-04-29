@@ -9,6 +9,7 @@ public class FollowBehaviour2D : MonoBehaviour
 
     public Vector3 Position { get { return _transform.position; } }
 
+
     void Awake()
     {
         // this.transform makes a call to GetComponent<Transform>

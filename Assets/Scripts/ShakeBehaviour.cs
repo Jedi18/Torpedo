@@ -22,13 +22,11 @@ public class ShakeBehaviour : MonoBehaviour {
 	{
 	    if (!_isShaking)
 	        return;
-
         _shakeTimer += Time.deltaTime;
 		if (_shakeTimer <= _timeToShake)
 		{
 			Vector2 shakeOffset = Random.insideUnitCircle * _shakeAmount;
 		    Vector3 newPosition;
-
             // take target of followBehaviour into account if followBehaviour is attached
 		    if (_followBehaviour != null)
 		        newPosition = new Vector3(_followBehaviour.Position.x + shakeOffset.x, _followBehaviour.Position.y + shakeOffset.y, _followBehaviour.Position.z);
@@ -51,7 +49,7 @@ public class ShakeBehaviour : MonoBehaviour {
 	}
 
 	public void StartShaking()
-    {
+	{
 	    if (!_isShaking)
 	    {
             _isShaking = true;
