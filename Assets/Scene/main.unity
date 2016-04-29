@@ -188,6 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SubRigidbody: {fileID: 0}
   MoveSpeed: 10
+  angleToRot: 5
 --- !u!50 &484513920
 Rigidbody2D:
   serializedVersion: 2
@@ -365,7 +366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &924023665
 MonoBehaviour:
   m_ObjectHideFlags: 0

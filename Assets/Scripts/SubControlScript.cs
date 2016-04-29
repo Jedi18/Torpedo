@@ -18,22 +18,22 @@ public class SubControlScript : MonoBehaviour
 
 		if (Input.GetKey ("w")) 
 		{
-			SubRigidbody.velocity += (Vector2)transform.TransformDirection(Vector3.up) * MoveSpeed;
+			SubRigidbody.velocity += (Vector2)transform.up * MoveSpeed;
 		}
 
 		if (Input.GetKey ("s")) 
 		{
-			SubRigidbody.velocity -= (Vector2)transform.TransformDirection(Vector3.up) * MoveSpeed;
+			SubRigidbody.velocity -= (Vector2)transform.up * MoveSpeed;
 		}
 
 		if (Input.GetKey ("a")) 
 		{
-			SubRigidbody.MoveRotation(angleToRot);
+			SubRigidbody.MoveRotation(SubRigidbody.rotation + angleToRot);
 		}
 
 		if (Input.GetKey ("d")) 
 		{
-			SubRigidbody.MoveRotation(-angleToRot);;
+			SubRigidbody.MoveRotation(SubRigidbody.rotation - angleToRot);;
 		}
 
 	}
