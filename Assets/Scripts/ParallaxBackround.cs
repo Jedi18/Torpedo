@@ -22,13 +22,7 @@ public class ParallaxBackround : MonoBehaviour {
 			//offsetX = Time.time * -speed;
 			offsetX = player.transform.position.x;
 
-			//offsetX = Time.time * speed;
-			offsetX = player.transform.position.x;
-
             //offsetY = Time.time * -speed;
-			offsetY = player.transform.position.y;
-
-			//offsetY = Time.time * speed;
 			offsetY = player.transform.position.y;
 
 		Vector2 offset = new Vector2(offsetX,offsetY);
