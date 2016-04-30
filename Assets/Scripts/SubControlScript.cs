@@ -37,9 +37,7 @@ public class SubControlScript : MonoBehaviour
 		{
 			SubRigidbody.MoveRotation(SubRigidbody.rotation - angleToRot);;
 		}
-
-		SubRigidbody.velocity = new Vector2 (currentX,currentY);
-
+		
 	}
 
 
