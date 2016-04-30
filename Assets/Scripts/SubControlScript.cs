@@ -5,7 +5,7 @@ public class SubControlScript : MonoBehaviour
 {
 	public Rigidbody2D SubRigidbody;
 	public float MoveSpeed = 5f;
-
+	public GameObject ExplosionGo;
 
 	void Start ()
 	{
@@ -13,39 +13,34 @@ public class SubControlScript : MonoBehaviour
 	}
 	
 
-	void Update () 
+	void Update ()
 	{	
 		float currentX = SubRigidbody.velocity.x;
 		float currentY = SubRigidbody.velocity.y;
 
-		if (Input.GetKey ("w")) 
-		{
+		if (Input.GetKey ("w")) {
 			currentY = MoveSpeed;
 		}
 
-		if (Input.GetKey ("s")) 
-		{
+		if (Input.GetKey ("s")) {
 			currentY = -MoveSpeed;
 		}
 
-		if (Input.GetKey ("a")) 
-		{
+		if (Input.GetKey ("a")) {
 			currentX = -MoveSpeed;
 		}
 
-		if (Input.GetKey ("d")) 
-		{
+		if (Input.GetKey ("d")) {
 			currentX = MoveSpeed;
 		}
 
-		SubRigidbody.velocity = new Vector2 (currentX,currentY);
 
-	
-
+		SubRigidbody.velocity = new Vector2 (currentX, currentY);
 	}
-
-	void FixedUpdate()
-	{
 		
-		}
+
+
+
 	}
+
+
