@@ -18,28 +18,21 @@ public class ParallaxBackround : MonoBehaviour {
 		float offsetX = 0;
 		float offsetY = 0;
 
-        if (Input.GetKey(KeyCode.A))
-        {
+
 			//offsetX = Time.time * -speed;
 			offsetX = player.transform.position.x;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
+
 			//offsetX = Time.time * speed;
 			offsetX = player.transform.position.x;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
+
             //offsetY = Time.time * -speed;
 			offsetY = player.transform.position.y;
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
+
 			//offsetY = Time.time * speed;
 			offsetY = player.transform.position.y;
-        }
 
 		Vector2 offset = new Vector2(offsetX,offsetY);
 		GetComponent<Renderer>().material.mainTextureOffset = offset;
+        Debug.Log(GetComponent<Renderer>().material.mainTextureOffset.ToString());
     }
 }
