@@ -5,7 +5,7 @@ public class TorpedoCollider : MonoBehaviour {
 
 	public GameObject ExplosionGo;
 
-	public void OnTriggerEnter2D(Collider2D col)
+	public void OnCollisionEnter2D(Collision2D col)
 	{
 		
 		if (col.gameObject.tag == "Player") {

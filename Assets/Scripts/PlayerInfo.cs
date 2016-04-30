@@ -5,10 +5,10 @@ using System.Collections;
 public class PlayerInfo : MonoBehaviour {
 
 	public int health = 3;
-	public float score = 0;
+	public static float score = 0;
 	public Text scoreText;
 	public Text healthText;
-	public bool isAlive;
+	public static bool isAlive;
 
 	// Use this for initialization
 	void Start () {
